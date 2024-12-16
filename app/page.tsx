@@ -1,4 +1,5 @@
 import { Button } from "@/app/components/ui/button";
+import React from "react";
 
 export default function Home() {
   return (
@@ -6,7 +7,6 @@ export default function Home() {
       <div>
         <h1 className="text-4xl font-bold mb-3">Home page</h1>
       </div>
-
       <div>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto

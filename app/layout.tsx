@@ -22,6 +22,10 @@ export default function RootLayout({
         <HeaderLayout />
         <div className="content min-h-[80svh]">{children}</div>
         <FooterLayout />
+
+        <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+        <script src="https://unpkg.com/lucide@latest"></script>
+        <script>lucide.createIcons();</script>
       </body>
     </html>
   );
