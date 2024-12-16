@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import { Home } from "lucide-react";
 
 export const HeaderLayout = (): React.ReactNode => {
   return (
@@ -17,10 +16,7 @@ export const HeaderLayout = (): React.ReactNode => {
       <nav className="w-auto justify-between items-center px-5 py-2">
         <ul className="w-full flex justify-center gap-5">
           <li>
-            <Link href="/">
-              <Home size={23} />
-              Inicio
-            </Link>
+            <Link href="/">Inicio</Link>
           </li>
           <li>
             <Link href="/about-us">Sobre nosotros</Link>
