@@ -1,10 +1,10 @@
 import React from "react";
 
-interface Props{
-  children:React.ReactNode;
+interface Props {
+  className?: string;
+  children: React.ReactNode;
 }
 
-export const Button = ({children}:Props):React.ReactNode => {
-  return <button>{children}</button>;
+export const Button = ({ className, children }: Props): React.ReactNode => {
+  return <button className={className}>{children}</button>;
 };
-
