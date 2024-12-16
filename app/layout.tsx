@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Noto_Sans_Display } from "next/font/google";
 import "./globals.css";
+import React from "react";
+import { FooterLayout, HeaderLayout } from "@/app/components";
 
 const noto = Noto_Sans_Display({ subsets: ["latin"] });
 
@@ -11,12 +13,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body className={noto.className}>{children}</body>
+      <body className={noto.className}>
+        <HeaderLayout />
+        <div className="content min-h-[80svh]">{children}</div>
+        <FooterLayout />
+      </body>
     </html>
   );
 }
