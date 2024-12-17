@@ -21,7 +21,7 @@ export const services: Service[] = [
       "Declaración de impuestos IGV - Renta.",
     ],
     direction: "right",
-    code: "contable",
+    code: "outsorcing",
   },
   {
     title: "Asesoría contable y tributaria",
@@ -34,7 +34,7 @@ export const services: Service[] = [
       "Aviso oportuno sobre nuevas normativas y/o beneficios del Gobierno.",
     ],
     direction: "left",
-    code: "contable2",
+    code: "accounting",
   },
   {
     title: "Cálculo de Planillas",
@@ -47,6 +47,6 @@ export const services: Service[] = [
       "Cálculo de beneficios laborales (CTS, gratificaciones, vacaciones, liquidaciones, etc.).",
     ],
     direction: "right",
-    code: "contable3",
+    code: "labor",
   },
 ];
