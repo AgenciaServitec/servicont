@@ -9,7 +9,7 @@ import {
   CircleArrowRight,
 } from "lucide-react";
 import { ServiceComponent } from "@/app/services/ServiceComponent";
-import { services } from "@/app/data-list";
+import { services } from "../data-list";
 
 export default function Home() {
   const [serviceSelected, setServiceSelected] = useState("contable");
