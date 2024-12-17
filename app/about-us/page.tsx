@@ -1,6 +1,4 @@
 import React from "react";
-import { ChevronRight, House } from "lucide-react";
-import Link from "next/link";
 import { AboutCompanyComponent } from "@/app/about-us/AboutCompanyComponent";
 
 export default function AboutUsPage(): React.ReactNode {
@@ -13,19 +11,6 @@ export default function AboutUsPage(): React.ReactNode {
           <p className="text-xl font-semibold text-white">
             Conoce más sobre nosotros
           </p>
-          <div className="w-full flex items-center gap-3 font-semibold text-white">
-            <Link
-              className="flex items-center gap-3 hover:text-blue-950"
-              href="/"
-            >
-              <House />
-              Inicio
-            </Link>
-            <ChevronRight />
-            <Link href="/about-us" className="hover:text-blue-950">
-              Nosotros
-            </Link>
-          </div>
         </div>
       </div>
       <AboutCompanyComponent />

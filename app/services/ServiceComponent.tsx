@@ -17,17 +17,17 @@ export const ServiceComponent = ({
   direction,
 }: Props): React.ReactNode => {
   return (
-    <div className="w-4/5 flex justify-center sm:flex-col md:flex-row gap-10 p-4">
+    <div className="xl:w-4/5 xl:p-4 lg:w-5/6 lg:p-3  w-11-12 flex sm:flex-col md:flex-row justify-center items-center gap-10 p-4 ">
       {direction === "right" ? (
         <>
-          <div className="flex flex-col w-3/5 gap-8 justify-center p-4">
+          <div className="md:text-lg text-base flex flex-col md:w-3/5 w-4/5 gap-8 justify-center md:p-4 p-3 ">
             <div className="flex flex-col gap-4">
-              <p className="font-bold text-3xl">{title}</p>
+              <p className="font-bold lg:text-3xl text-2xl">{title}</p>
               <p className="text-lg flex flex-wrap text-gray-500">
                 {description}
               </p>
             </div>
-            <ul className="text-lg flex flex-col gap-3 text-gray-500">
+            <ul className="md:text-lg text-base flex flex-col justify-center  text-start gap-3 text-gray-500">
               {items}
             </ul>
           </div>
