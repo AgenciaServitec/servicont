@@ -18,14 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={noto.className}>
+      <body className={`${noto.className}`}>
         <HeaderLayout />
         <div className="content min-h-[80svh]">{children}</div>
         <FooterLayout />
-
-        <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-        <script src="https://unpkg.com/lucide@latest"></script>
-        <script>lucide.createIcons();</script>
       </body>
     </html>
   );
