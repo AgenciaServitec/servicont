@@ -36,6 +36,6 @@ export default function Home() {
         serviceSelected={serviceSelected}
         onSetServiceSelected={onSetServiceSelected}
       />
-    </>
+    </div>
   );
 }

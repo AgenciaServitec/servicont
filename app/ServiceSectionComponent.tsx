@@ -6,8 +6,8 @@ import {
   CircleArrowRight,
   HandCoins,
 } from "lucide-react";
-import { services } from "@/app/data-list";
 import { ServiceComponent } from "@/app/services/ServiceComponent";
+import { services } from "@/data-list";
 
 interface Props {
   serviceSelected: string;
