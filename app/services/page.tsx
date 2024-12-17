@@ -1,6 +1,6 @@
 import React from "react";
 import { ServiceComponent } from "@/app/services/ServiceComponent";
-import { services } from "../../data-list";
+import { services } from "@/data-list";
 import { CircleArrowRight } from "lucide-react";
 
 export default function Services() {
