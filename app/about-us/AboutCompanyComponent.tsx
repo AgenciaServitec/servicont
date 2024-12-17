@@ -3,8 +3,8 @@ import Image from "next/image";
 
 export const AboutCompanyComponent = () => {
   return (
-    <div className="w-full flex px-10 py-10">
-      <div className="w-6/12 px-6 py-20 flex gap-6 justify-center items-center">
+    <div className="w-full lg:flex lg:flex-row px-10 py-10 flex flex-col">
+      <div className="lg:w-6/12 w-full px-6 py-20 flex gap-6 justify-center items-center">
         <div className="relative bg-gray-500 rounded-3xl overflow-hidden">
           <div className="absolute inset-0 bg-black/20 bg-gradient-to-b from-black/60 via-transparent to-transparent rounded-3xl z-10 pointer-events-none"></div>
           <div className="relative z-20">
@@ -31,7 +31,7 @@ export const AboutCompanyComponent = () => {
           </div>
         </div>
       </div>
-      <div className="w-6/12 px-6 py-12 flex flex-col justify-center gap-6">
+      <div className="lg:w-6/12 w-full px-6 py-12 flex flex-col justify-center gap-6">
         <div className="">
           <p className="text-blue-950 text-4xl font-semibold">
             SERVITEC ESTUDIO CONTABLE:

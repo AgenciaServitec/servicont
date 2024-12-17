@@ -25,14 +25,12 @@ export default function Services() {
           description={service.description}
           image={service.image}
           items={service.items.map((item, index) => (
-            <li key={index} className="flex gap-5 items-center">
-              <div className="w-1/5">
-                <CircleArrowRight
-                  className="text-primary object-contain"
-                  size={20}
-                />
-              </div>
-              <div className="w-4/5">{item}</div>
+            <li key={index} className="flex gap-3 items-center">
+              <CircleArrowRight
+                className="text-primary object-contain"
+                size={20}
+              />
+              {item}
             </li>
           ))}
           direction={service.direction}
