@@ -12,11 +12,11 @@ export function ContactInfo({
   value,
 }: ContactInfoProps): React.ReactNode {
   return (
-    <div className="flex flex-col lg:flex-row items-center lg:items-center gap-3">
+    <div className="flex flex-col md:flex-row items-center lg:items-center gap-4">
       {children}
-      <div className="flex flex-col">
-        <span className="text-xs mb-1 text-gray-400">{title}</span>
-        <span className="font-bold text-black">{value}</span>
+      <div className="flex flex-col items-center md:items-start mt-4 md:m-0">
+        <span className="text-sm mb-1 text-gray-400">{title}</span>
+        <span className="font-medium text-black">{value}</span>
       </div>
     </div>
   );

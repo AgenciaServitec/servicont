@@ -18,8 +18,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={noto.className}>
-        {/*<HeaderLayout />*/}
+      <body className={`${noto.className}`}>
+        <HeaderLayout />
         <div className="content min-h-[80svh]">{children}</div>
         <FooterLayout />
       </body>
