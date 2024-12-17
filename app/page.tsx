@@ -1,6 +1,6 @@
 "use client";
 import { Button } from "@/app/components/ui/button";
-import React from "react";
+import React, { useState } from "react";
 
 import {
   BookUser,
@@ -12,7 +12,7 @@ import { ServiceComponent } from "@/app/services/ServiceComponent";
 import { services } from "@/app/data-list";
 
 export default function Home() {
-  const [isVisible, setIsVisible] = React.useState("contable");
+  const [serviceSelected, setServiceSelected] = useState("contable");
 
   return (
     <div className="w-full h-full font-sans p-6">
@@ -45,36 +45,36 @@ export default function Home() {
         </div>
         <div className="flex gap-6">
           <Button
-            className="flex flex-col gap-0.5 items-center bg-blue-600 w-32 px-0 py-2 rounded-xl"
+            className={`flex flex-col gap-0.5 items-center  w-32 px-0 py-2 rounded-xl ${serviceSelected === "contable" ? "bg-primary" : "bg-white"} hover:bg-primary`}
             style={{
               boxShadow:
                 "0px 4px 16px 0px rgba(101.59302819293477, 150.04578121307893, 190.74609374999997, 0.16)",
             }}
-            onClick={() => setIsVisible("contable")}
+            onClick={() => setServiceSelected("contable")}
           >
             <BookUser />
             <p>Outsorcing</p>
             <p>Contable</p>
           </Button>
           <Button
-            className="flex flex-col gap-0.5 items-center  w-32 px-0 py-2 rounded-xl bg-white hover:bg-blue-600"
+            className={`flex flex-col gap-0.5 items-center  w-32 px-0 py-2 rounded-xl ${serviceSelected === "contable2" ? "bg-primary" : "bg-white"} hover:bg-primary`}
             style={{
               boxShadow:
                 "0px 4px 16px 0px rgba(101.59302819293477, 150.04578121307893, 190.74609374999997, 0.16)",
             }}
-            onClick={() => setIsVisible("contable2")}
+            onClick={() => setServiceSelected("contable2")}
           >
             <HandCoins />
             <p>Asesoría</p>
             <p>Contable</p>
           </Button>
           <Button
-            className="flex flex-col gap-0.5 items-center  w-32 px-0 py-2 rounded-xl  bg-white hover:bg-blue-600"
+            className={`flex flex-col gap-0.5 items-center  w-32 px-0 py-2 rounded-xl ${serviceSelected === "contable3" ? "bg-primary" : "bg-white"} hover:bg-primary`}
             style={{
               boxShadow:
                 "0px 4px 16px 0px rgba(101.59302819293477, 150.04578121307893, 190.74609374999997, 0.16)",
             }}
-            onClick={() => setIsVisible("contable3")}
+            onClick={() => setServiceSelected("contable3")}
           >
             <BriefcaseBusiness />
             <p>Asesoría</p>
@@ -84,7 +84,7 @@ export default function Home() {
         <div className="w-full flex flex-col items-center">
           {services.map(
             (service, index) =>
-              isVisible === service.code && (
+              serviceSelected === service.code && (
                 <ServiceComponent
                   key={index}
                   title={service.title}
@@ -96,7 +96,7 @@ export default function Home() {
                       {item}
                     </li>
                   ))}
-                  direction={service.direction}
+                  direction="right"
                 />
               ),
           )}
