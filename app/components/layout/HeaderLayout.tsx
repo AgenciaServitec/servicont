@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { Menu, Phone } from "lucide-react";
 import { Drawer } from "./Drawer";
@@ -8,6 +8,14 @@ export const HeaderLayout = (): React.ReactNode => {
   const [isVisible, setIsVisible] = useState(false);
 
   const onVisibleDrawer = () => setIsVisible(!isVisible);
+
+  useEffect(() => {
+    if (isVisible) {
+      document.body.style.overflowY = "hidden";
+    } else {
+      document.body.style.overflowY = "auto";
+    }
+  }, [isVisible]);
 
   return (
     <header className="bg-transparent p-6 w-f text-black flex justify-between items-center">
