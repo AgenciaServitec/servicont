@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { Menu, Phone } from "lucide-react";
 import { Drawer } from "./Drawer";
-import { ContentWrapper } from "@/app/ContentWrapper";
+import { ContentWrapper } from "@/app/components/ui/ContentWrapper";
 
 export const HeaderLayout = (): React.ReactNode => {
   const [isVisible, setIsVisible] = useState(false);

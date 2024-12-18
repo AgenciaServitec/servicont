@@ -1,52 +1,91 @@
+import {
+  BookUser,
+  FileText,
+  LucideIcon,
+  PieChart,
+  ShieldCheck,
+} from "lucide-react";
+
 interface Service {
   title: string;
   description: string;
   image: string;
-  items: [string, string, string];
+  items: string[];
   direction: string;
   code: string;
+  icon: LucideIcon;
 }
 
 export const services: Service[] = [
   {
-    title: "Outsourcing contable",
+    title: "Contabilidad",
     description:
-      "Delega la contabilidad de tu negocio nuestro estudio contable en Lima. Así evitarás posibles multas o sanciones de la Sunat, no tendrás que corregir errores futuros y tendrás más tiempo para enfocarte en impulsar tu negocio.",
+      "Delega la contabilidad de tu negocio a nuestro estudio contable en Lima. Así evitarás posibles multas o sanciones de la Sunat, no tendrás que corregir errores futuros y tendrás más tiempo para enfocarte en impulsar tu negocio.",
     image: "/images/contadores.webp",
     items: [
-      "Registro de ventas y compras en libros contables.",
-
-      "Gestión de documentos contables.",
-
-      "Declaración de impuestos IGV - Renta.",
+      "Servicios Contables",
+      "Presentaciones Tributarias",
+      "Asesoría Contable - Tributaria",
+      "Control Interno",
+      "Actualización de Registros y Libros Contables",
+      "Preparación de Estados Financieros",
+      "Declaración de Impuestos",
     ],
     direction: "right",
-    code: "outsorcing",
+    code: "accounting",
+    icon: BookUser,
   },
   {
-    title: "Asesoría contable y tributaria",
+    title: "Administración de Empresas",
     description:
-      "Contar con la asesoría de un estudio contable en Lima, te permite prevenir o afrontar multas con Sunat y estar al tanto de las nuevas oportunidades que el gobierno ofrece en beneficio de los emprendedores",
+      "Optimiza la gestión de tu empresa con nuestra asesoría, asegurando eficiencia, cumplimiento normativo y crecimiento sostenido.",
     image: "/images/asesoria.webp",
     items: [
-      "Orientación si ocurre algún problema con SUNAT.",
-      "Asesoría para llevar una contabilidad saludable.",
-      "Aviso oportuno sobre nuevas normativas y/o beneficios del Gobierno.",
+      "Outsourcing Laboral y de Recursos Humanos",
+      "Servicios Laborales y de Recursos Humanos",
+      "Outsourcing Administrativo Financiero",
     ],
     direction: "left",
-    code: "accounting",
+    code: "business-administration",
+    icon: FileText,
   },
   {
-    title: "Cálculo de Planillas",
+    title: "Reestructuración y Liquidación de Empresas",
     description:
-      "Nuestro estudio contable en Lima realiza un análisis de los beneficios sociales de los colaboradores, manteniendo el estándar adecuado para que la información sea presentada de forma confidencial y oportuna, lo que te evitará problemas con la SUNAFIL y malentendidos con tus trabajadores.",
+      "Te guiamos en la reorganización o liquidación de tu empresa, garantizando decisiones estratégicas y cumplimiento legal.",
     image: "/images/clientes.webp",
     items: [
-      "Cálculo de descuentos de planilla, adelantos, renta 5ta categoría, EsSalud.",
-      "Declaración de planilla electrónica (Plame y AFPnet).",
-      "Cálculo de beneficios laborales (CTS, gratificaciones, vacaciones, liquidaciones, etc.).",
+      "Auditoria de Estados Financieros",
+      "Auditoria Operativa",
+      "Auditoria Tributaria",
+      "Auditoria Interna",
+      "Exámenes Especiales de Auditoria",
     ],
     direction: "right",
-    code: "labor",
+    code: "restructuring-companies",
+    icon: PieChart,
+  },
+  {
+    title: "Otras Especialidades",
+    description:
+      "Soluciones personalizadas en gestión fiscal, beneficios laborales y procesos contables, adaptadas a las necesidades de tu empresa.",
+    image: "/images/businessMeet.webp",
+    items: [
+      "Asesoría Jurídica en lo Civil",
+      "Asesoría en la Ley General de Sociedades.",
+      "Elaboramos Minutas, Actas, Poderes, Aumentos de Capital y Levantamiento de Hipotecas.\n",
+      "Cobranzas difíciles de Letras, Facturas, etc.",
+      "Asesoría ante Registros Públicos.",
+      "Asesoría ante Notarías.",
+      "Reclamaciones y Apelaciones ante SUNAT.",
+      "Leyes Laborales - Indemnizaciones - Subsidios.",
+      "Negociación y Administración de Contratos.",
+      "Selección de Personal.",
+      "Evaluación de Puestos de Trabajo.",
+      "Gestiones ante ESSALUD - AFP - CTS.",
+    ],
+    direction: "right",
+    code: "other-specialties",
+    icon: ShieldCheck,
   },
 ];
