@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { ServiceSectionComponent } from "@/app/ServiceSectionComponent";
+import { MainSection } from "@/app/MainSection";
 
 export default function Home() {
   const [serviceSelected, setServiceSelected] = useState("outsorcing");
@@ -11,6 +12,7 @@ export default function Home() {
 
   return (
     <>
+      <MainSection />
       <ServiceSectionComponent
         serviceSelected={serviceSelected}
         onSetServiceSelected={onSetServiceSelected}
