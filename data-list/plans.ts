@@ -1,7 +1,7 @@
 export const plans: Plan[] = [
   {
-    id: "plan-micro",
-    name: "Micro",
+    id: "plan-emprendedor",
+    name: "Emprendedor",
     price: "200",
     description:
       "El plan perfecto si recién estás empezando a utilizar nuestros servicios.",
@@ -25,8 +25,8 @@ export const plans: Plan[] = [
     ],
   },
   {
-    id: "plan-enterprise",
-    name: "Enterprise",
+    id: "plan-corporativo",
+    name: "Corporativo",
     price: "350",
     description:
       "El plan perfecto si ya tienes una empresa consolidada y con grandes ingresos.",

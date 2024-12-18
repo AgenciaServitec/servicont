@@ -18,7 +18,7 @@ export const PlanCard = ({
 }: Props) => {
   return (
     <div
-      className={`rounded-3xl p-8 ring-1 ring-gray-900/10 min-h-[40em] h-auto sm:mx-8 sm:p-10 lg:mx-0 ${planId === "plan-mipe" ? "bg-gray-900" : "bg-white/60"}`}
+      className={`rounded-3xl p-8 ring-1 ring-gray-900/10 min-h-[30em] h-auto sm:mx-8 sm:p-10 lg:mx-0 ${planId === "plan-mipe" ? "bg-gray-900" : "bg-white/60"}`}
     >
       <h3 id="tier-plan" className="text-base/7 font-semibold text-primary">
         {name}
@@ -38,7 +38,7 @@ export const PlanCard = ({
       </p>
       <ul
         role="list"
-        className={`space-y-3 sm:mt-10 text-sm/6 min-h-[20em] mt-0 flex flex-col justify-start ${planId === "plan-mipe" ? "text-gray-200" : "text-gray-600"}`}
+        className={`space-y-2 sm:mt-5 text-sm/6 min-h-[20em] mt-0 flex flex-col justify-start ${planId === "plan-mipe" ? "text-gray-200" : "text-gray-600"}`}
       >
         {(services || []).map((service, index) => (
           <li key={index} className="flex items-center gap-x-3">
