@@ -24,8 +24,9 @@ export default function Plans() {
           </p>
         </div>
         <p className="mx-auto mt-6 max-w-2xl text-center text-lg font-medium text-pretty text-gray-600 sm:text-xl/8">
-          Elija un plan asequible que incluya los servicios de acuerdo a sus
-          requerimientos para su empresa.
+          Te ayudamos a organizar tus finanzas y cumplir con las normativas,
+          para que puedas enfocarte en hacer crecer tu negocio sin
+          preocupaciones.
         </p>
         <div className="mx-auto mt-16 grid max-w-lg grid-cols-1 items-center gap-4 sm:mt-20 sm:gap-y-5 lg:max-w-4xl lg:grid-cols-3">
           {plans.map((plan, index) => (

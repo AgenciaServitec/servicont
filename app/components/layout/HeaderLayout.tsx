@@ -5,10 +5,12 @@ import { Menu, Phone } from "lucide-react";
 import { Drawer } from "./Drawer";
 import { ContentWrapper } from "@/app/components/ui/ContentWrapper";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export const HeaderLayout = (): React.ReactNode => {
-  const [isVisible, setIsVisible] = useState(false);
+  const pathname = usePathname();
 
+  const [isVisible, setIsVisible] = useState(false);
   const onVisibleDrawer = () => setIsVisible(!isVisible);
 
   useEffect(() => {
@@ -19,8 +21,12 @@ export const HeaderLayout = (): React.ReactNode => {
     }
   }, [isVisible]);
 
+  const isHomePage = pathname === "/";
+
   return (
-    <header className="w-full bg-transparent backdrop-blur-sm fixed top-0 left-0 z-40">
+    <header
+      className={`w-full bg-transparent top-0 left-0 z-40 ${isHomePage ? "backdrop-blur-sm fixed" : "relative"}`}
+    >
       <ContentWrapper>
         <div className="w-full p-6 w-f text-black flex justify-between items-center">
           <div className="logo grid place-items-center">

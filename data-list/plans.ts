@@ -3,8 +3,7 @@ export const plans: Plan[] = [
     id: "plan-emprendedor",
     name: "Emprendedor",
     price: "200",
-    description:
-      "El plan perfecto si recién estás empezando a utilizar nuestros servicios.",
+    description: "El plan perfecto si recién estás empezando con tu negocio.",
     services: [
       "Registro de libros contables compra y venta",
       "Declaración de impuestos PDT (IGV-Renta)",
@@ -15,7 +14,7 @@ export const plans: Plan[] = [
     id: "plan-mipe",
     name: "Mipe",
     price: "300",
-    description: "El plan ideal si ya facturas de gran cantidad.",
+    description: "El plan ideal si ya facturas grandes cantidades.",
     services: [
       "Registro de libros contables compra y venta",
       "Declaración de impuestos PDT (IGV-Renta)",
