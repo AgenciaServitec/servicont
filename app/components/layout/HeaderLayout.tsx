@@ -19,7 +19,7 @@ export const HeaderLayout = (): React.ReactNode => {
   }, [isVisible]);
 
   return (
-    <header>
+    <header className="w-full bg-transparent backdrop-blur-sm fixed top-0 left-0 z-40">
       <ContentWrapper>
         <div className="w-full p-6 w-f text-black flex justify-between items-center">
           <div className="logo grid place-items-center">
