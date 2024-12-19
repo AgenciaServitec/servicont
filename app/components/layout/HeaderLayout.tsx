@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Menu, Phone } from "lucide-react";
 import { Drawer } from "./Drawer";
 import { ContentWrapper } from "@/app/components/ui/ContentWrapper";
+import Image from "next/image";
 
 export const HeaderLayout = (): React.ReactNode => {
   const [isVisible, setIsVisible] = useState(false);
@@ -24,10 +25,12 @@ export const HeaderLayout = (): React.ReactNode => {
         <div className="w-full p-6 w-f text-black flex justify-between items-center">
           <div className="logo grid place-items-center">
             <Link href="/">
-              <img
-                src="https://servitecperu.com/logotipo-soft.png"
+              <Image
+                src="/images/logo.png"
+                width={170}
+                height={42}
                 alt="logo servicont"
-                className="w-full max-w-[170px]"
+                className="w-full max-w-[200px] h-auto"
               />
             </Link>
           </div>
