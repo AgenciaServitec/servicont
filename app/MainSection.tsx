@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import React from "react";
-import { ContentWrapper } from "@/app/components/ui/ContentWrapper";
+import { ContentWrapper } from "@/components/ui/ContentWrapper";
 
 export function MainSection() {
   return (

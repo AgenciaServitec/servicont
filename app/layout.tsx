@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Noto_Sans_Display } from "next/font/google";
 import "./globals.css";
 import React from "react";
-import { FooterLayout, HeaderLayout } from "@/app/components";
+import { HeaderLayout } from "@/components/layout/HeaderLayout";
+import { FooterLayout } from "@/components/layout/FooterLayout";
 
 const noto = Noto_Sans_Display({ subsets: ["latin"] });
 

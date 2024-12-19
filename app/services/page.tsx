@@ -2,7 +2,7 @@ import React from "react";
 import { ServiceComponent } from "@/app/services/ServiceComponent";
 import { services } from "@/data-list";
 import { CircleArrowRight } from "lucide-react";
-import { ContentWrapper } from "@/app/components";
+import { ContentWrapper } from "@/components/ui/ContentWrapper";
 
 export default function Services() {
   return (

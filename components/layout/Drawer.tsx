@@ -19,7 +19,7 @@ export function Drawer({ isVisible, onVisibleDrawer }: Props): React.ReactNode {
       <nav>
         <ul>
           <li className="hover:bg-secondary p-6">
-            <Link href="/" onClick={onVisibleDrawer}>
+            <Link href="/public" onClick={onVisibleDrawer}>
               Inicio
             </Link>
           </li>

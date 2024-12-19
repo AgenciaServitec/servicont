@@ -3,11 +3,11 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { Menu, Phone } from "lucide-react";
 import { Drawer } from "./Drawer";
-import { ContentWrapper } from "@/app/components/ui/ContentWrapper";
+import { ContentWrapper } from "@/components/ui/ContentWrapper";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
-export const HeaderLayout = (): React.ReactNode => {
+export const HeaderLayout = () => {
   const pathname = usePathname();
 
   const [isVisible, setIsVisible] = useState(false);
