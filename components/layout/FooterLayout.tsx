@@ -7,9 +7,9 @@ import {
   MessageCircle,
   PhoneCall,
 } from "lucide-react";
-import { SocialIcon } from "@/components/ui/SocialIcon";
-import { ContentWrapper } from "@/components/ui/ContentWrapper";
-import { ContactInfo } from "@/components/ui/ContactInfo";
+import { SocialIcon } from "@/components/ui-custom/SocialIcon";
+import { ContentWrapper } from "@/components/ui-custom/ContentWrapper";
+import { ContactInfo } from "@/components/ui-custom/ContactInfo";
 
 export const FooterLayout = (): React.ReactNode => {
   return (

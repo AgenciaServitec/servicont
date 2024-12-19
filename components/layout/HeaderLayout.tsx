@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { Menu, Phone } from "lucide-react";
 import { Drawer } from "./Drawer";
-import { ContentWrapper } from "@/components/ui/ContentWrapper";
+import { ContentWrapper } from "@/components/ui-custom/ContentWrapper";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 

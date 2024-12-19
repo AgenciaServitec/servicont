@@ -1,7 +1,7 @@
 import React from "react";
 import { plans } from "@/data-list";
 import { PlanCard } from "@/components/pages/PlanCard";
-import { ContentWrapper } from "@/components/ui/ContentWrapper";
+import { ContentWrapper } from "@/components/ui-custom/ContentWrapper";
 
 export const PlansSectionComponent = () => {
   return (

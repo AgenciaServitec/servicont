@@ -5,7 +5,7 @@ import { CircleArrowRight } from "lucide-react";
 import { ServiceComponent } from "@/components/pages/ServiceComponent";
 import { services } from "@/data-list";
 import { ButtonsServicesSectionComponent } from "@/components/pages/ButtonsServicesSectionComponent";
-import { ContentWrapper } from "@/components/ui/ContentWrapper";
+import { ContentWrapper } from "@/components/ui-custom/ContentWrapper";
 
 export const ServiceSectionComponent = (): React.ReactNode => {
   const [serviceSelected, setServiceSelected] = useState("accounting");

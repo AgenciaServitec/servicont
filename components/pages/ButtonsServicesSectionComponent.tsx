@@ -1,6 +1,6 @@
 import React from "react";
 import { services } from "@/data-list";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui-custom/button";
 
 interface Props {
   serviceSelected: string;
