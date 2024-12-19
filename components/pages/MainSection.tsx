@@ -19,7 +19,7 @@ export function MainSection() {
       }}
     >
       <ContentWrapper>
-        <div className="w-full flex flex-col md:flex-row justify-between md:items-center px-4 pt-32 lg:pt-28">
+        <div className="w-full flex flex-col md:flex-row justify-between md:items-center px-10 pt-32 lg:pt-28">
           <div>
             <p className="text-xl lg:text-2xl text-primary font-medium">
               Estudio Contable en Lima

@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { CircleArrowRight } from "lucide-react";
 import { ServiceComponent } from "@/app/services/ServiceComponent";
 import { services } from "@/data-list";
-import { ButtonsServicesSectionComponent } from "@/app/ButtonsServicesSectionComponent";
+import { ButtonsServicesSectionComponent } from "@/components/pages/ButtonsServicesSectionComponent";
 import { ContentWrapper } from "@/components/ui/ContentWrapper";
 
 export const ServiceSectionComponent = (): React.ReactNode => {

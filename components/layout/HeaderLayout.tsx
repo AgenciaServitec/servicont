@@ -7,10 +7,10 @@ import { ContentWrapper } from "@/components/ui/ContentWrapper";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
-export const HeaderLayout = () => {
+export const HeaderLayout = (): React.ReactNode => {
   const pathname = usePathname();
 
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
   const onVisibleDrawer = () => setIsVisible(!isVisible);
 
   useEffect(() => {

@@ -1,7 +1,7 @@
 import React from "react";
-import { ServiceSectionComponent } from "@/app/ServiceSectionComponent";
-import { MainSection } from "@/app/MainSection";
-import { PlansSectionComponent } from "@/app/PlansSectionComponent";
+import { ServiceSectionComponent } from "@/components/pages/ServiceSectionComponent";
+import { MainSection } from "@/components/pages/MainSection";
+import { PlansSectionComponent } from "@/components/pages/PlansSectionComponent";
 
 export default function Home() {
   return (

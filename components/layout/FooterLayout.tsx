@@ -16,7 +16,7 @@ export const FooterLayout = (): React.ReactNode => {
     <footer className="bg-gray-100">
       <ContentWrapper>
         <div className="pt-10">
-          <div className="flex flex-col md:flex-row gap-8 px-3 py-10">
+          <div className="flex flex-col md:flex-row gap-8 px-10 py-10">
             <div className="flex-1">
               <h2 className="text-center md:text-left text-secondary uppercase font-bold mb-4">
                 Contáctanos
