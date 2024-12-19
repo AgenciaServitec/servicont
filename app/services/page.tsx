@@ -1,5 +1,5 @@
 import React from "react";
-import { ServiceComponent } from "@/app/services/ServiceComponent";
+import { ServiceComponent } from "@/components/pages/ServiceComponent";
 import { services } from "@/data-list";
 import { CircleArrowRight } from "lucide-react";
 import { ContentWrapper } from "@/components/ui/ContentWrapper";

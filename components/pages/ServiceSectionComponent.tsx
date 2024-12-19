@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { CircleArrowRight } from "lucide-react";
-import { ServiceComponent } from "@/app/services/ServiceComponent";
+import { ServiceComponent } from "@/components/pages/ServiceComponent";
 import { services } from "@/data-list";
 import { ButtonsServicesSectionComponent } from "@/components/pages/ButtonsServicesSectionComponent";
 import { ContentWrapper } from "@/components/ui/ContentWrapper";

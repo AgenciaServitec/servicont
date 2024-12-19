@@ -1,5 +1,5 @@
 import { plans } from "@/data-list";
-import { PlanCard } from "@/app/plans/[planId]/PlanCard";
+import { PlanCard } from "@/components/pages/PlanCard";
 
 export default function Plans() {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 import { plans } from "@/data-list";
-import { PlanCard } from "@/app/plans/[planId]/PlanCard";
+import { PlanCard } from "@/components/pages/PlanCard";
 import { ContentWrapper } from "@/components/ui/ContentWrapper";
 
 export const PlansSectionComponent = () => {

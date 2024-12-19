@@ -1,5 +1,5 @@
 import React from "react";
-import { AboutCompanyComponent } from "@/app/about-us/AboutCompanyComponent";
+import { AboutCompanyComponent } from "@/components/pages/AboutCompanyComponent";
 
 export default function AboutUsPage(): React.ReactNode {
   return (
