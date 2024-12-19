@@ -11,7 +11,13 @@ import { ContentWrapper } from "@/app/components/ui/ContentWrapper";
 
 export function MainSection() {
   return (
-    <div className="h-[90vh] bg-gradient-to-bl from-[#ffe4e6]  to-[#ccfbf1]">
+    <div
+      className="h-[80svh]"
+      style={{
+        backgroundImage: "url('/images/bg-aqua-mark.webp')",
+        backgroundSize: "cover",
+      }}
+    >
       <ContentWrapper>
         <div className="w-full flex flex-col md:flex-row justify-between md:items-center px-4 pt-32 lg:pt-28">
           <div>

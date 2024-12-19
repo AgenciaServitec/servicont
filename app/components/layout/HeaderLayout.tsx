@@ -34,28 +34,28 @@ export const HeaderLayout = (): React.ReactNode => {
           <nav className="hidden md:flex w-auto justify-between items-center px-5 py-2">
             <ul className="w-full flex justify-center items-center gap-5">
               <li>
-                <Link href="/" className="hover:text-primary font-bold">
+                <Link href="/" className="hover:text-primary font-500">
                   Inicio
                 </Link>
               </li>
               <li>
-                <Link href="/about-us" className="hover:text-primary font-bold">
+                <Link href="/about-us" className="hover:text-primary font-500">
                   Sobre nosotros
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-primary font-bold">
+                <Link href="/services" className="hover:text-primary font-500">
                   Servicios
                 </Link>
               </li>
               <li>
-                <Link href="/plans" className="hover:text-primary font-bold">
+                <Link href="/plans" className="hover:text-primary font-500">
                   Planes
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-white font-bold">
-                  <div className="flex gap-2 bg-primary text px-2 py-2 rounded-md">
+                <Link href="/contact" className="text-white font-500">
+                  <div className="flex gap-2 bg-primary text px-5 py-2 rounded-md">
                     <Phone size={23} />
                     <span>Contacto</span>
                   </div>
