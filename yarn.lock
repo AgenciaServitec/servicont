@@ -222,6 +222,11 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
+"@lyracom/embedded-form-glue@^1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@lyracom/embedded-form-glue/-/embedded-form-glue-1.4.2.tgz#0077da8803027d459edcdeaa1c796886ecb3de17"
+  integrity sha512-UrHIJ1T8qNId/FHgoh7iKwyTIGPi3PWYeg+ULDIyD1hysb7627/lT927yZQ1HPrIzSV6LFkuL7sxBTxMtjvC0A==
+
 "@next/env@15.1.0":
   version "15.1.0"
   resolved "https://registry.yarnpkg.com/@next/env/-/env-15.1.0.tgz#35b00a5f60ff10dc275182928c325d25c29379ae"
