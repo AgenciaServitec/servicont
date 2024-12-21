@@ -1,11 +1,12 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { Menu, Phone } from "lucide-react";
+import { Menu, Phone, UserIcon } from "lucide-react";
 import { Drawer } from "./Drawer";
 import { ContentWrapper } from "@/components/ui-custom/ContentWrapper";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { Button } from "@/components/ui/button";
 
 export const HeaderLayout = (): React.ReactNode => {
   const pathname = usePathname();
@@ -63,12 +64,26 @@ export const HeaderLayout = (): React.ReactNode => {
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-white font-500">
-                  <div className="flex gap-2 bg-primary text px-5 py-2 rounded-md">
+                <Button className="flex gap-2">
+                  <Link
+                    href="/contact"
+                    className="flex gap-2 text-white font-500 items-center"
+                  >
                     <Phone size={23} />
                     <span>Contacto</span>
-                  </div>
-                </Link>
+                  </Link>
+                </Button>
+              </li>
+              <li>
+                <Button variant="secondary" className="flex gap-2">
+                  <Link
+                    href="/dashboard"
+                    className="flex gap-2 text-white font-500 items-center"
+                  >
+                    <UserIcon size={23} />
+                    <span>Iniciar sesión</span>
+                  </Link>
+                </Button>
               </li>
             </ul>
           </nav>

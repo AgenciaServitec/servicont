@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Noto_Sans_Display } from "next/font/google";
 import "./globals.css";
 import React from "react";
-import { HeaderLayout } from "@/components/layout/HeaderLayout";
-import { FooterLayout } from "@/components/layout/FooterLayout";
+import { PublicLayout } from "@/app/PublicLayout";
 
 const noto = Noto_Sans_Display({ subsets: ["latin"] });
 
@@ -18,11 +17,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${noto.className}`}>
-        <HeaderLayout />
-        <main className="content min-h-[80svh]">{children}</main>
-        <FooterLayout />
+        <PublicLayout>{children}</PublicLayout>
       </body>
     </html>
   );
