@@ -4,6 +4,7 @@ import * as React from "react";
 import {
   BanknoteIcon,
   BoxIcon,
+  HomeIcon,
   LifeBuoy,
   LogOut,
   Send,
@@ -33,25 +34,31 @@ const data = {
   },
   navMain: [
     {
+      title: "Inicio",
+      url: "/",
+      icon: HomeIcon,
+      isActive: true,
+    },
+    {
       title: "Perfil",
-      url: "#",
+      url: "/profile",
       icon: UserIcon,
       isActive: true,
     },
     {
       title: "Plan",
-      url: "#",
+      url: "/plan",
       icon: BoxIcon,
       isActive: true,
     },
     {
       title: "Pagos",
-      url: "#",
+      url: "/payments",
       icon: BanknoteIcon,
     },
     {
       title: "Cerrar sesión",
-      url: "#",
+      url: "/",
       icon: LogOut,
       className: "text-red-600",
     },
@@ -78,7 +85,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <div className="grid grid-cols-[1fr,auto] items-center">
             <SidebarMenuItem>
               <SidebarMenuButton size="lg" asChild>
-                <a href="#">
+                <div>
                   <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-white text-sidebar-primary-foreground p-[3px]">
                     <Link href="/" className="flex items-center space-x-2">
                       <Image
@@ -95,7 +102,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                       Servicios Contables
                     </span>
                   </div>
-                </a>
+                </div>
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
