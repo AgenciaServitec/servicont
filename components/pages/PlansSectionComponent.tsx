@@ -7,7 +7,7 @@ export const PlansSectionComponent = () => {
   return (
     <ContentWrapper>
       <div className="w-full ">
-        <div className="relative isolate bg-white px-6 py-10 sm:py-4 lg:px-8">
+        <div className="relative isolate px-6 py-10 sm:py-4 lg:px-8">
           <div
             className="absolute inset-x-0-top-3-z-10 transform-gpu overflow-hidden px-36 blur-3xl"
             aria-hidden="true"
@@ -22,11 +22,11 @@ export const PlansSectionComponent = () => {
           </div>
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="text-base/7 font-semibold text-primary">Precios</h2>
-            <p className="mt-2 text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-6xl">
+            <p className="mt-2 text-5xl font-semibold tracking-tight text-balance text-primary sm:text-6xl">
               Elige el plan adecuado para ti
             </p>
           </div>
-          <p className="mx-auto mt-6 max-w-2xl text-center text-lg font-medium text-pretty text-gray-600 sm:text-xl/8">
+          <p className="mx-auto mt-6 max-w-2xl text-center text-lg font-medium text-pretty text-gray-300 sm:text-xl/8">
             Elija un plan asequible que incluya los servicios de acuerdo a sus
             requerimientos para su empresa.
           </p>

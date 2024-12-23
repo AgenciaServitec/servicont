@@ -18,7 +18,7 @@ export const PlanCard = ({
 }: Props) => {
   return (
     <div
-      className={`rounded-3xl p-8 ring-1 ring-gray-900/10 min-h-[30em] h-auto sm:mx-8 sm:p-10 lg:mx-0 ${planId === "plan-mipe" ? "bg-gray-900" : "bg-white/60"}`}
+      className={`rounded-3xl p-8 ring-1 ring-gray-900/10 min-h-[30em] h-auto sm:mx-8 sm:p-10 lg:mx-0 ${planId === "plan-mipe" ? "bg-gray-700" : "bg-white/60"}`}
     >
       <h3 id="tier-plan" className="text-base/7 font-semibold text-primary">
         {name}
