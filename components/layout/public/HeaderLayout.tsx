@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { Menu, Phone, UserIcon } from "lucide-react";
+import { Menu, UserIcon } from "lucide-react";
 import { Drawer } from "./Drawer";
 import { ContentWrapper } from "@/components/ui-custom/ContentWrapper";
 import Image from "next/image";
@@ -64,12 +64,12 @@ export const HeaderLayout = (): React.ReactNode => {
                 </Link>
               </li>
               <li>
-                <Button className="flex gap-2">
+                <Button variant="secondary" className="flex gap-2">
                   <Link
                     href="/contact"
                     className="flex gap-2 text-white font-500 items-center"
                   >
-                    <Phone size={23} />
+                    <UserIcon size={23} />
                     <span>Contacto</span>
                   </Link>
                 </Button>
@@ -77,7 +77,7 @@ export const HeaderLayout = (): React.ReactNode => {
               <li>
                 <Button variant="secondary" className="flex gap-2">
                   <Link
-                    href="/dashboard"
+                    href="/login"
                     className="flex gap-2 text-white font-500 items-center"
                   >
                     <UserIcon size={23} />

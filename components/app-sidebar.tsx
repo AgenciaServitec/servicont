@@ -35,25 +35,25 @@ const data = {
   navMain: [
     {
       title: "Inicio",
-      url: "/",
+      url: "/dashboard",
       icon: HomeIcon,
       isActive: true,
     },
     {
       title: "Perfil",
-      url: "/profile",
+      url: "/dashboard/profile",
       icon: UserIcon,
       isActive: true,
     },
     {
       title: "Plan",
-      url: "/plan",
+      url: "/dashboard/plan",
       icon: BoxIcon,
       isActive: true,
     },
     {
       title: "Pagos",
-      url: "/payments",
+      url: "/dashboard/payments",
       icon: BanknoteIcon,
     },
     {

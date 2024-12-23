@@ -1,3 +1,4 @@
+import React from "react";
 import {
   ArrowRight,
   BriefcaseBusiness,
@@ -6,7 +7,6 @@ import {
   Search,
 } from "lucide-react";
 import Image from "next/image";
-import React from "react";
 import { ContentWrapper } from "@/components/ui-custom/ContentWrapper";
 
 export function MainSection() {
@@ -71,21 +71,21 @@ export function MainSection() {
             </div>
           </div>
           <div className="hidden md:flex lg:mr-10 relative">
-            <div className="flex items-center gap-2 bg-white absolute rounded-xl px-4 py-2 shadow-lg top-20 -left-28">
+            <div className="flex items-center gap-2 bg-blend-lighten absolute rounded-xl px-4 py-2 shadow-lg top-20 -left-28">
               <Search size={30} />
               <div className="flex flex-col text-sm">
                 <span className="font-bold">Asesoría</span>
                 <span>Contable y Tributaria</span>
               </div>
             </div>
-            <div className="flex items-center gap-2 bg-white absolute rounded-xl px-4 py-2 shadow-lg top-52 -left-40 lg:-left-52">
+            <div className="flex items-center gap-2 bg-blend-lighten absolute rounded-xl px-4 py-2 shadow-lg top-52 -left-40 lg:-left-52">
               <ChartNoAxesCombined size={30} />
               <div className="flex flex-col text-sm">
                 <span className="font-bold">Declaración de</span>
                 <span>Impuestos</span>
               </div>
             </div>
-            <div className="flex items-center gap-2 bg-white absolute rounded-xl px-4 py-2 shadow-lg top-80 left-0">
+            <div className="flex items-center gap-2 bg-blend-lighten absolute rounded-xl px-4 py-2 shadow-lg top-80 left-0">
               <BriefcaseBusiness size={30} />
               <div className="flex flex-col text-sm">
                 <span className="font-bold">Asesoría</span>

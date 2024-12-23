@@ -12,12 +12,13 @@ export const PublicLayout = ({ children }: Props) => {
   const pathname = usePathname();
 
   const isDashboard = pathname.includes("dashboard");
+  const isLogin = pathname.includes("login");
 
   return (
     <div className="w-full h-auto">
-      {!isDashboard && <HeaderLayout />}
+      {!isDashboard && !isLogin && <HeaderLayout />}
       <main className="content min-h-[80svh]">{children}</main>
-      {!isDashboard && <FooterLayout />}
+      {!isDashboard && !isLogin && <FooterLayout />}
     </div>
   );
 };

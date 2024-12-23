@@ -16,7 +16,7 @@ export function LoginForm({
       <form className={cn("flex flex-col gap-6 mb-5", className)} {...props}>
         <div className="grid gap-6">
           <div className="flex flex-col gap-4">
-            <Link href="/dashboard/home">
+            <Link href="/dashboard">
               <Button variant="outline" className="w-full">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                   <path
@@ -27,7 +27,7 @@ export function LoginForm({
                 Iniciar sesión con Apple
               </Button>
             </Link>
-            <Link href="/dashboard/home">
+            <Link href="/dashboard">
               <Button variant="outline" className="w-full">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                   <path
@@ -66,7 +66,7 @@ export function LoginForm({
               </div>
               <Input id="password" type="password" required />
             </div>
-            <Link href="/dashboard/home">
+            <Link href="/dashboard">
               <Button className="w-full">Iniciar sesión</Button>
             </Link>
           </div>
