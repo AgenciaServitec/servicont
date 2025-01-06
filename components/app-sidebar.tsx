@@ -6,7 +6,6 @@ import {
   BoxIcon,
   HomeIcon,
   LifeBuoy,
-  LogOut,
   Send,
   UserIcon,
 } from "lucide-react";
@@ -55,12 +54,6 @@ const data = {
       title: "Pagos",
       url: "/dashboard/payments",
       icon: BanknoteIcon,
-    },
-    {
-      title: "Cerrar sesión",
-      url: "/",
-      icon: LogOut,
-      className: "text-red-600",
     },
   ],
   navSecondary: [

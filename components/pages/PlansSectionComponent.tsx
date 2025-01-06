@@ -26,7 +26,7 @@ export const PlansSectionComponent = () => {
               Elige el plan adecuado para ti
             </p>
           </div>
-          <p className="mx-auto mt-6 max-w-2xl text-center text-lg font-medium text-pretty text-gray-300 sm:text-xl/8">
+          <p className="mx-auto mt-6 max-w-2xl text-center text-lg font-medium text-pretty text-gray-600 sm:text-xl/8">
             Elija un plan asequible que incluya los servicios de acuerdo a sus
             requerimientos para su empresa.
           </p>
