@@ -7,6 +7,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { signInSchema } from "@/lib/zod";
 import { Button } from "@/components/ui/button";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import {
   Form,
   FormControl,
@@ -17,6 +18,8 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { signIn } from "next-auth/react";
+import { AlertCircle } from "lucide-react";
+import { authenticationErrors } from "@/data-list";
 
 export function LoginForm() {
   const [error, setError] = useState("");
@@ -32,14 +35,16 @@ export function LoginForm() {
   const onSubmit = async (values: z.infer<typeof signInSchema>) => {
     const { email, password } = values;
 
-    const res = await signIn("credentials", {
+    const response = await signIn("credentials", {
       email,
       password,
       redirect: false,
     });
 
-    if (res?.error) {
-      setError(res.error);
+    console.log("response: ", response);
+
+    if (response?.error) {
+      setError(response.error);
     } else {
       window.location.href = "/dashboard";
     }
@@ -47,7 +52,15 @@ export function LoginForm() {
 
   return (
     <div>
-      {error && <p className="error">{error}</p>}
+      {error && (
+        <Alert variant="destructive" className="bg-white mb-3">
+          <AlertCircle className="h-4 w-4" />
+          <AlertTitle>Error</AlertTitle>
+          <AlertDescription>
+            {authenticationErrors?.[error] || ""}
+          </AlertDescription>
+        </Alert>
+      )}
       <div className="flex flex-col items-center gap-2 text-center mb-5">
         <h1 className="text-2xl font-bold">Inicie sesión en su cuenta</h1>
       </div>

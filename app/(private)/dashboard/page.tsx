@@ -6,6 +6,8 @@ import { useSession } from "next-auth/react";
 export default function HomeIntegration() {
   const { data: session, status } = useSession();
 
+  console.log("session: ", session);
+
   if (status === "loading") {
     return <div>Loading...</div>;
   }

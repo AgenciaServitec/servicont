@@ -1,7 +1,6 @@
 "use client";
 
 import { ChevronsUpDown, LogOut } from "lucide-react";
-
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   DropdownMenu,
@@ -19,7 +18,7 @@ import {
 } from "@/components/ui/sidebar";
 import { signOut } from "next-auth/react";
 
-export function NavUser({
+export async function NavUser({
   user,
 }: {
   user: {

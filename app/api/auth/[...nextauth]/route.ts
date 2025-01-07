@@ -28,7 +28,7 @@ export const authOptions: AuthOptions = {
           return { id: user.id, email: user.email };
         }
 
-        throw new Error("Invalid email or password");
+        throw new Error("sign-in/invalid_email_or_password");
       },
     }),
   ],
@@ -38,7 +38,7 @@ export const authOptions: AuthOptions = {
   session: {
     strategy: "jwt",
   },
-  secret: process.env.NEXTAUTH_SECRET, // Genera un valor único con `openssl rand -base64 32`
+  secret: process.env.NEXTAUTH_URL, // Genera un valor único con `openssl rand -base64 32`
 };
 
 const handler = NextAuth(authOptions);
