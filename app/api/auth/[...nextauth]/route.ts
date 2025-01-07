@@ -5,7 +5,7 @@ const users = [
   {
     id: "1",
     email: "admin@servicont.com",
-    password: "123456", // Simula una base de datos
+    password: "123456",
   },
 ];
 
@@ -33,12 +33,13 @@ export const authOptions: AuthOptions = {
     }),
   ],
   pages: {
-    signIn: "/login", // Redirige al inicio de sesión personalizado
+    signIn: "/login",
+    signOut: "/",
   },
   session: {
     strategy: "jwt",
   },
-  secret: process.env.NEXTAUTH_URL, // Genera un valor único con `openssl rand -base64 32`
+  secret: process.env.AUTH_SECRET, // Genera un valor único con `openssl rand -base64 32`
 };
 
 const handler = NextAuth(authOptions);

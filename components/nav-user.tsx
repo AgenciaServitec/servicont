@@ -18,7 +18,7 @@ import {
 } from "@/components/ui/sidebar";
 import { signOut } from "next-auth/react";
 
-export async function NavUser({
+export function NavUser({
   user,
 }: {
   user: {
@@ -70,9 +70,7 @@ export async function NavUser({
             <DropdownMenuSeparator />
             <DropdownMenuItem
               className="text-red-600"
-              onClick={async () =>
-                await signOut({ redirect: true, callbackUrl: "/" })
-              }
+              onClick={() => signOut()}
             >
               <LogOut />
               Cerrar sesión
