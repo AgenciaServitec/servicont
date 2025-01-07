@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useTransition } from "react";
 import { signInSchema } from "@/lib/zod";
 import { Button } from "@/components/ui/button";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
@@ -18,11 +18,32 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { signIn } from "next-auth/react";
-import { AlertCircle } from "lucide-react";
+import { AlertCircle, Loader2 } from "lucide-react";
 import { authenticationErrors } from "@/data-list";
 
 export function LoginForm() {
   const [error, setError] = useState("");
+  const [isPending, startTransition] = useTransition();
+
+  const onSubmit = async (values: z.infer<typeof signInSchema>) => {
+    startTransition(async () => {
+      const { email, password } = values;
+
+      const response = await signIn("credentials", {
+        email,
+        password,
+        redirect: false,
+      });
+
+      console.log("response: ", response);
+
+      if (response?.error) {
+        setError(response.error);
+      } else {
+        window.location.href = "/dashboard";
+      }
+    });
+  };
 
   const form = useForm<z.infer<typeof signInSchema>>({
     resolver: zodResolver(signInSchema),
@@ -32,23 +53,7 @@ export function LoginForm() {
     },
   });
 
-  const onSubmit = async (values: z.infer<typeof signInSchema>) => {
-    const { email, password } = values;
-
-    const response = await signIn("credentials", {
-      email,
-      password,
-      redirect: false,
-    });
-
-    console.log("response: ", response);
-
-    if (response?.error) {
-      setError(response.error);
-    } else {
-      window.location.href = "/dashboard";
-    }
-  };
+  console.log("isPending: ", isPending);
 
   return (
     <div>
@@ -128,8 +133,15 @@ export function LoginForm() {
                     )}
                   />
                 </div>
-                <Button className="w-full" type="submit">
-                  Iniciar sesión
+                <Button className="w-full" type="submit" disabled={isPending}>
+                  {isPending ? (
+                    <>
+                      <Loader2 className="animate-spin" />
+                      Cargando...
+                    </>
+                  ) : (
+                    "Iniciar sesión"
+                  )}
                 </Button>
               </div>
             </form>
