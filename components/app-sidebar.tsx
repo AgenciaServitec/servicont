@@ -25,6 +25,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { ComponentProps } from "react";
 import { useSession } from "next-auth/react";
+import { SkeletonAvatar } from "@/components/SkeletonAvatar";
+import { SkeletonMenu } from "@/components/SkeletonMenu";
+import { Skeleton } from "@/components/ui/skeleton";
 
 interface AppSidebarDataProps extends ComponentProps<typeof Sidebar> {
   user: {
@@ -58,19 +61,12 @@ export const AppSidebarIntegration = ({
   ...props
 }: React.ComponentProps<typeof Sidebar>) => {
   const { data: session, status } = useSession();
-
-  if (status === "loading") {
-    return <div>Loading...</div>;
-  }
-
-  if (!session) {
-    return <div>You are not logged in.</div>;
-  }
+  const isLoadingSession = status === "loading";
 
   const data: AppSidebarDataProps = {
     user: {
-      name: "User",
-      email: session?.user?.email as string,
+      name: session?.user?.firstName || "No found",
+      email: session?.user?.email || "",
       avatar: "/avatars/shadcn.jpg",
     },
     navMain: [
@@ -107,14 +103,17 @@ export const AppSidebarIntegration = ({
     ],
   };
 
-  return <AppSidebar data={data} />;
+  return (
+    <AppSidebar data={data} isLoadingSession={isLoadingSession} {...props} />
+  );
 };
 
 interface AppSidebarProps {
   data: AppSidebarDataProps;
+  isLoadingSession: boolean;
 }
 
-const AppSidebar = ({ data, ...props }: AppSidebarProps) => {
+const AppSidebar = ({ data, isLoadingSession, ...props }: AppSidebarProps) => {
   return (
     <Sidebar variant="inset" {...props}>
       <SidebarHeader>
@@ -151,9 +150,25 @@ const AppSidebar = ({ data, ...props }: AppSidebarProps) => {
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} />
-        <NavSecondary items={data.navSecondary} className="mt-auto" />
-        <NavUser user={data.user} />
+        {isLoadingSession ? (
+          <div className="flex flex-col justify-between w-full h-full space-y-5">
+            <SkeletonMenu />
+            <div className="space-y-6">
+              <div className="flex items-center space-x-3 w-full">
+                <div className="space-y-3 w-full">
+                  <Skeleton className="h-6 w-full" />
+                </div>
+              </div>
+              <SkeletonAvatar />
+            </div>
+          </div>
+        ) : (
+          <>
+            <NavMain items={data.navMain} />
+            <NavSecondary items={data.navSecondary} className="mt-auto" />
+            <NavUser user={data.user} />
+          </>
+        )}
       </SidebarContent>
     </Sidebar>
   );

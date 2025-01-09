@@ -22,8 +22,8 @@ import { AlertCircle, Loader2 } from "lucide-react";
 import { authenticationErrors } from "@/data-list";
 
 export function LoginForm() {
-  const [error, setError] = useState("");
   const [isPending, startTransition] = useTransition();
+  const [error, setError] = useState("");
 
   const onSubmit = async (values: z.infer<typeof signInSchema>) => {
     startTransition(async () => {
@@ -34,8 +34,6 @@ export function LoginForm() {
         password,
         redirect: false,
       });
-
-      console.log("response: ", response);
 
       if (response?.error) {
         setError(response.error);
@@ -52,8 +50,6 @@ export function LoginForm() {
       password: "",
     },
   });
-
-  console.log("isPending: ", isPending);
 
   return (
     <div>

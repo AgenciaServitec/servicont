@@ -28,7 +28,6 @@ export function PersonalInfo() {
           </div>
         </CardContent>
       </Card>
-
       <Card>
         <CardHeader>
           <CardTitle>Documento identidad</CardTitle>

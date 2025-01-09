@@ -2,11 +2,10 @@
 
 import React from "react";
 import { useSession } from "next-auth/react";
+import { Session } from "next-auth";
 
 export default function HomeIntegration() {
   const { data: session, status } = useSession();
-
-  console.log("session: ", session);
 
   if (status === "loading") {
     return <div>Loading...</div>;
@@ -19,10 +18,10 @@ export default function HomeIntegration() {
   return <Home session={session} />;
 }
 
-const Home = ({ session }: { session: any }) => {
+const Home = ({ session }: { session: Session }) => {
   return (
-    <div className="grid min-h-svh lg:grid-cols-2">
-      <h1>Bienvenido {session?.user?.email}</h1>
+    <div className="min-h-svh">
+      <h1>Bienvenido {session?.user?.email}</h1> <br />
       <pre>{JSON.stringify(session, null, 2)}</pre>
     </div>
   );

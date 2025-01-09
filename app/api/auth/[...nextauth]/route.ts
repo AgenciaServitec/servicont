@@ -1,13 +1,25 @@
 import NextAuth, { AuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import { collection, getDocs, limit, query, where } from "firebase/firestore";
+import { firestore } from "@/firebase";
+import { querySnapshotToArray } from "@/firebase/firestore";
+import assert from "assert";
+import { JWT } from "next-auth/jwt";
 
-const users = [
-  {
-    id: "1",
-    email: "admin@servicont.com",
-    password: "123456",
-  },
-];
+const existsUser = async (email: string, password: string) => {
+  const usersRef = collection(firestore, "users");
+
+  const _query = query(
+    usersRef,
+    where("email", "==", email),
+    where("password", "==", password),
+    limit(1),
+  );
+
+  const querySnapshot = await getDocs(_query);
+
+  return querySnapshotToArray(querySnapshot);
+};
 
 export const authOptions: AuthOptions = {
   providers: [
@@ -21,14 +33,18 @@ export const authOptions: AuthOptions = {
         },
         password: { label: "Password", type: "password" },
       },
-      async authorize(credentials) {
-        const user = users.find((u) => u.email === credentials?.email);
+      authorize: async (credentials) => {
+        assert(credentials?.email, "sign-in/missing_email");
+        assert(credentials?.password, "sign-in/missing_password");
 
-        if (user && credentials?.password === user.password) {
-          return { id: user.id, email: user.email };
+        const users = await existsUser(credentials.email, credentials.password);
+        const user = users?.[0];
+
+        if (!user) {
+          throw new Error("sign-in/invalid_email_or_password");
         }
 
-        throw new Error("sign-in/invalid_email_or_password");
+        return user;
       },
     }),
   ],
@@ -36,10 +52,22 @@ export const authOptions: AuthOptions = {
     signIn: "/login",
     signOut: "/",
   },
+  secret: process.env.AUTH_SECRET,
   session: {
     strategy: "jwt",
   },
-  secret: process.env.AUTH_SECRET, // Genera un valor único con `openssl rand -base64 32`
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user) {
+        token = <JWT>user;
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      session.user = token;
+      return session;
+    },
+  },
 };
 
 const handler = NextAuth(authOptions);
