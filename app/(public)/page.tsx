@@ -7,6 +7,7 @@ export default function Home() {
   return (
     <>
       <MainSection />
+      <h1>COMMIT TEST 1</h1>
       <ServiceSectionComponent />
       <PlansSectionComponent />
     </>
