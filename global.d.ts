@@ -23,4 +23,5 @@ interface User extends DefaultFirestoreProps {
   password: string;
   paternalSurname: string;
   roleCode: RoleCode;
+  profileImg?: Image;
 }

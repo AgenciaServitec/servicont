@@ -1,9 +1,9 @@
 "use client";
 
-import React from "react";
+import React, { ComponentProps } from "react";
 import {
-  BanknoteIcon,
   BoxIcon,
+  CreditCard,
   HomeIcon,
   type LucideIcon,
   Send,
@@ -23,18 +23,13 @@ import {
 import { ThemeToggle } from "@/components/theme-toggle";
 import Link from "next/link";
 import Image from "next/image";
-import { ComponentProps } from "react";
 import { useSession } from "next-auth/react";
 import { SkeletonAvatar } from "@/components/SkeletonAvatar";
 import { SkeletonMenu } from "@/components/SkeletonMenu";
 import { Skeleton } from "@/components/ui/skeleton";
 
 interface AppSidebarDataProps extends ComponentProps<typeof Sidebar> {
-  user: {
-    name: string;
-    email: string;
-    avatar: string;
-  };
+  user: User;
   navMain: {
     title: string;
     url: string;
@@ -64,11 +59,7 @@ export const AppSidebarIntegration = ({
   const isLoadingSession = status === "loading";
 
   const data: AppSidebarDataProps = {
-    user: {
-      name: session?.user?.firstName || "No found",
-      email: session?.user?.email || "",
-      avatar: "/avatars/shadcn.jpg",
-    },
+    user: session?.user as User,
     navMain: [
       {
         title: "Inicio",
@@ -89,9 +80,9 @@ export const AppSidebarIntegration = ({
         isActive: true,
       },
       {
-        title: "Pagos",
-        url: "/dashboard/payments",
-        icon: BanknoteIcon,
+        title: "Facturación",
+        url: "/dashboard/billing",
+        icon: CreditCard,
       },
     ],
     navSecondary: [
