@@ -1,15 +1,14 @@
 import NextAuth, { AuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import assert from "assert";
-import { FirestoreAdapter } from "@auth/firebase-adapter";
-import { firestoreAdmin } from "@/lib/firestore";
+import { collection, getDocs, limit, query, where } from "firebase/firestore";
 import { firestore } from "@/firebase";
-import { collection, getDocs, limit, query, where } from "@firebase/firestore";
 import { querySnapshotToArray } from "@/firebase/firestore";
+import assert from "assert";
 import { JWT } from "next-auth/jwt";
 
 const existsUser = async (email: string, password: string) => {
   const usersRef = collection(firestore, "users");
+
   const _query = query(
     usersRef,
     where("email", "==", email),
@@ -23,7 +22,6 @@ const existsUser = async (email: string, password: string) => {
 };
 
 export const authOptions: AuthOptions = {
-  adapter: FirestoreAdapter(firestoreAdmin),
   providers: [
     CredentialsProvider({
       name: "Credentials",
@@ -35,7 +33,7 @@ export const authOptions: AuthOptions = {
         },
         password: { label: "Password", type: "password" },
       },
-      async authorize(credentials) {
+      authorize: async (credentials) => {
         assert(credentials?.email, "sign-in/missing_email");
         assert(credentials?.password, "sign-in/missing_password");
 
